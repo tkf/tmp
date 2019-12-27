@@ -19,7 +19,13 @@ jobs:
         with:
           version: ${{ matrix.julia-version }}
 
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v2
+      - name: '"Merge" master to create-pull-request/pkg-update'
+        run:
+          - git merge --Xours origin/create-pull-request/pkg-update
+          - git checkout -B create-pull-request/pkg-update
+          - git branch --set-upstream-to origin/create-pull-request/pkg-update
+
       - name: Update test/Manifest.toml
         run: julia --project=test -e "import Pkg; Pkg.update()"
       - name: Update docs/Manifest.toml
