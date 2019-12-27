@@ -6,8 +6,6 @@ on:
   push:
     branches:
       - actions/trigger/pkg-update
-  issues:
-    types: [opened, reopened]
 
 jobs:
   build:
