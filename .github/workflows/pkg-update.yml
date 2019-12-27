@@ -22,7 +22,7 @@ jobs:
       - uses: actions/checkout@v2
       - name: '"Merge" master to create-pull-request/pkg-update'
         run: |
-          git fetch --progress --unshallow origin refs/heads/master:refs/remotes/origin/master refs/heads/create-pull-request/pkg-update:refs/remotes/origin/create-pull-request/pkg-update
+          git fetch --unshallow origin refs/heads/master:refs/remotes/origin/master refs/heads/create-pull-request/pkg-update:refs/remotes/origin/create-pull-request/pkg-update
           git config --global user.email "tkf@users.noreply.github.com"
           git config --global user.name "tkf"
           git merge -Xours origin/create-pull-request/pkg-update
