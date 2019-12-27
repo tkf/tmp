@@ -23,8 +23,8 @@ jobs:
       - name: '"Merge" master to create-pull-request/pkg-update'
         run: |
           git fetch --progress --depth=1 origin refs/heads/create-pull-request/pkg-update:refs/remotes/origin/create-pull-request/pkg-update
-          git config --global user.email "aka.tkf@gmail.com"
-          git config --global user.name "Takafumi Arakaki"
+          git config --global user.email "tkf@users.noreply.github.com"
+          git config --global user.name "tkf"
           git merge -Xours --allow-unrelated-histories origin/create-pull-request/pkg-update
           git checkout -B create-pull-request/pkg-update
           git branch --set-upstream-to origin/create-pull-request/pkg-update
