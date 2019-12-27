@@ -29,6 +29,7 @@ jobs:
             || exit 0
           git config --global user.email "tkf@users.noreply.github.com"
           git config --global user.name "tkf"
+          git checkout -B master origin/master
           git merge -Xours origin/create-pull-request/pkg-update
           git checkout -B create-pull-request/pkg-update
           git branch --set-upstream-to origin/create-pull-request/pkg-update
