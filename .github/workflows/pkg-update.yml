@@ -22,7 +22,7 @@ jobs:
       - uses: actions/checkout@v2
       - name: '"Merge" master to create-pull-request/pkg-update'
         run: |
-          git merge --Xours origin/create-pull-request/pkg-update
+          git merge -Xours origin/create-pull-request/pkg-update
           git checkout -B create-pull-request/pkg-update
           git branch --set-upstream-to origin/create-pull-request/pkg-update
 
