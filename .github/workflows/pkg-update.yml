@@ -34,6 +34,7 @@ jobs:
           git merge --strategy=ours --no-commit master
           git checkout master -- .
           git checkout origin/create-pull-request/pkg-update -- */Manifest.toml
+          git add .
           git commit -m "Merge branch 'master'" || exit 0
 
       - name: Update test/Manifest.toml
