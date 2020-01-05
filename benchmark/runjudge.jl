@@ -16,8 +16,6 @@ progressoptions =
         NamedTuple()
     end
 
-error("oops!")
-
 group_target = benchmarkpkg(
     dirname(@__DIR__),
     mkconfig(),
