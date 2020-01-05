@@ -1,0 +1,25 @@
+pull_request_rules:
+  - name: automatic squash-merge when CI passes
+    conditions:
+      - base=master
+      - status-success=continuous-integration/travis-ci/pr
+      - label=ready-to-merge:squash
+    actions:
+      merge:
+        method: squash
+  - name: automatic rebase-merge when CI passes
+    conditions:
+      - base=master
+      - status-success=continuous-integration/travis-ci/pr
+      - label=ready-to-merge:rebase
+    actions:
+      merge:
+        method: rebase
+  - name: automatic merge when CI passes
+    conditions:
+      - base=master
+      - status-success=continuous-integration/travis-ci/pr
+      - label=ready-to-merge:merge
+    actions:
+      merge:
+        method: merge
